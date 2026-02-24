@@ -8,6 +8,8 @@ public class woodManager : MonoBehaviour
     bool wood3 = false;
     GameObject[] wood;
     GameObject target;
+    public AudioSource audioSource;
+    public AudioClip woodPutDown;
     void Start()
     {
         target = GameObject.Find("Canvas");
@@ -17,6 +19,11 @@ public class woodManager : MonoBehaviour
         {
             wood[i] = target.transform.GetChild(i).gameObject;
         }
+        audioSource.clip = woodPutDown;
+    }
+    void playSound()
+    {
+        audioSource.Play();
     }
     private void Update()
     {
@@ -35,6 +42,7 @@ public class woodManager : MonoBehaviour
     }
     public void wood1Throw()
     {
+        playSound();
         if (wood1)
         {
             wood[0].SetActive(false);
@@ -43,6 +51,7 @@ public class woodManager : MonoBehaviour
     }
     public void wood2Throw()
     {
+        playSound();
         if (wood2)
         {
             wood[1].SetActive(false);
@@ -51,6 +60,7 @@ public class woodManager : MonoBehaviour
     }
     public void wood3Throw()
     {
+        playSound();
         if (wood3)
         {
             wood[2].SetActive(false);

@@ -3,11 +3,12 @@ using UnityEngine;
 public class woodCheck : MonoBehaviour
 {
     public GameObject woodManager;
-
+    public CapsuleCollider2D playerCol;
     // Update is called once per frame
     bool player = false;
     void Update()
     {
+        if (!playerCol.IsTouching(gameObject.GetComponent<BoxCollider2D>())) return;
         if (Input.GetKeyDown(KeyCode.Q) && player)
         {
             woodManager.GetComponent<woodManager>().wood1Throw();
