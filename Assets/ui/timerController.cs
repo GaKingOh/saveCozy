@@ -17,8 +17,6 @@ public class timerController : MonoBehaviour
 
         // 현재 mask의 가로 크기 기준으로 이동 거리 계산
         width = mask.localScale.x;
-
-        setTime(cooltime); // 시작하자마자 테스트
     }
 
     void OnEnable()
@@ -35,6 +33,9 @@ public class timerController : MonoBehaviour
     public void setTime(float time)
     {
         cooltime = time;
+    }
+    public void init()
+    {
         timeCheck = 0f;
         running = true;
 
@@ -43,8 +44,8 @@ public class timerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(cooltime);
         if (!running) return;
-
         timeCheck += Time.deltaTime;
 
         float ratio = Mathf.Clamp01(timeCheck / cooltime);

@@ -16,6 +16,7 @@ public class eventController : MonoBehaviour
     private void Update()
     {
         timecheck += Time.deltaTime;
+    //    Debug.Log(timecheck);
         if(timecheck - Eventinterveral >0)
         {
             timecheck = 0;

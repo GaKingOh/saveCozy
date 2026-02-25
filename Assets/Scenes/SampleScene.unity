@@ -599,7 +599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &191030720
 Transform:
   m_ObjectHideFlags: 0
@@ -843,6 +843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::woodThrow
   audioSource: {fileID: 371476177}
   woodPutDown: {fileID: 8300000, guid: eb801e44a10cd7d499f34dca246f6d83, type: 3}
+  firePlaceEvent: {fileID: 1566483954}
 --- !u!82 &371476177
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2341,7 +2342,7 @@ GameObject:
   - component: {fileID: 864669509}
   - component: {fileID: 864669511}
   m_Layer: 0
-  m_Name: fire1_0
+  m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2555,7 +2556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &957826350
 Transform:
   m_ObjectHideFlags: 0
@@ -2584,6 +2585,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::window
   duration: 10
+  skull: {fileID: 1450135938}
+  minTimeLimit: 15
+  maxTimeLimit: 15
+  timerBar: {fileID: 1859616963}
+--- !u!1 &997662864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2620999437853023742, guid: 4e920ca3db6a6424ba79a345c16cb52b, type: 3}
+  m_PrefabInstance: {fileID: 2145445571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &999046497
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1450135939
 Transform:
   m_ObjectHideFlags: 0
@@ -3327,10 +3337,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: timer
       objectReference: {fileID: 0}
-    - target: {fileID: 2620999437853023742, guid: 4e920ca3db6a6424ba79a345c16cb52b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3999254117950136713, guid: 4e920ca3db6a6424ba79a345c16cb52b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3431,6 +3437,7 @@ MonoBehaviour:
   flame: {fileID: 864669509}
   fireLight: {fileID: 86951150}
   fireSound: {fileID: 23768567}
+  timerBar: {fileID: 997662864}
 --- !u!1 &1684542510
 GameObject:
   m_ObjectHideFlags: 0
@@ -4155,6 +4162,11 @@ Transform:
   - {fileID: 957826350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1859616963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2620999437853023742, guid: 4e920ca3db6a6424ba79a345c16cb52b, type: 3}
+  m_PrefabInstance: {fileID: 1547194267}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1916278182
 GameObject:
   m_ObjectHideFlags: 0

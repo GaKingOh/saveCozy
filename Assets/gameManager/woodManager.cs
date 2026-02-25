@@ -10,6 +10,8 @@ public class woodManager : MonoBehaviour
     GameObject target;
     public AudioSource audioSource;
     public AudioClip woodPutDown;
+
+    public GameObject firePlaceEvent;
     void Start()
     {
         target = GameObject.Find("Canvas");
@@ -42,27 +44,30 @@ public class woodManager : MonoBehaviour
     }
     public void wood1Throw()
     {
-        playSound();
         if (wood1)
         {
+            playSound();
+            firePlaceEvent.GetComponent<FireplaceEvent>().AddWood();
             wood[0].SetActive(false);
             wood1 = false;
         }
     }
     public void wood2Throw()
     {
-        playSound();
         if (wood2)
         {
+            playSound();
+            firePlaceEvent.GetComponent<FireplaceEvent>().AddWood();
             wood[1].SetActive(false);
             wood2 = false;
         }
     }
     public void wood3Throw()
     {
-        playSound();
         if (wood3)
         {
+            playSound();
+            firePlaceEvent.GetComponent<FireplaceEvent>().AddWood();
             wood[2].SetActive(false);
             wood3 = false;
         }

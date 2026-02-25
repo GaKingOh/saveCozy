@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3999254117950136713
 Transform:
   m_ObjectHideFlags: 0
@@ -151,8 +151,8 @@ Transform:
   m_GameObject: {fileID: 4692286609818884195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0025, y: 0, z: 0}
+  m_LocalScale: {x: 0.65740734, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3999254117950136713}
@@ -228,5 +228,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a7dba0b01428146b79523e3ab539d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::timerController
-  cooltime: 5
+  cooltime: 3
   mask: {fileID: 3635257114106527634}

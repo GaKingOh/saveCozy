@@ -15,6 +15,8 @@ public class FireplaceEvent : GameEvent
     Color startColor;
     Vector3 startFlameScale;
 
+    public GameObject timerBar;
+
     protected override void OnActivated()
     {
         // 이벤트마다 지속시간 랜덤
@@ -28,12 +30,15 @@ public class FireplaceEvent : GameEvent
         flame.enabled = true;
         fireLight.enabled = true;
         if (!fireSound.isPlaying) fireSound.Play();
+
+        timerBar.transform.GetChild(1).GetComponent<timerController>().setTime(duration);
+        timerBar.SetActive(true);
+        timerBar.transform.GetChild(1).GetComponent<timerController>().init();
     }
 
     protected override void OnTick(float ratio)
     {
         // 🔥 색 어두워짐
-        Debug.Log(ratio);
         flame.color = new Color(
             startColor.r * ratio,
             startColor.g * ratio,
@@ -55,7 +60,7 @@ public class FireplaceEvent : GameEvent
 
     protected override void OnResolved()
     {
-        // 해결되면 다시 정상화(장작 넣기 같은 것)
+        Debug.Log("아");
         flame.color = startColor;
         flame.transform.localScale = startFlameScale;
         fireLight.intensity = startLightIntensity;
@@ -76,6 +81,16 @@ public class FireplaceEvent : GameEvent
     // 플레이어 상호작용으로 해결시키고 싶으면 이렇게 호출
     public void AddWood()
     {
-        Resolve();
+        Resolve(); 
+        timerBar.SetActive(false); 
+    }
+    protected override void Update()
+    {
+        if (!IsActive) return;
+        timer += Time.deltaTime;
+        float ratio = Mathf.Clamp01(1f - timer / duration);
+        OnTick(ratio);
+
+        if (timer >= duration) Fail();
     }
 }

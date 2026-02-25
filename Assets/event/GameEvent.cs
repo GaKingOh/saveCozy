@@ -18,9 +18,11 @@ public abstract class GameEvent : MonoBehaviour
 
     public void Resolve() // 해결 전환 함수
     {
-        if (IsActive) return;
-        IsActive = false;
-        OnResolved();
+        if(IsActive)
+        {
+            IsActive = false;
+            OnResolved();
+        }
     }
     protected void Fail() // 실패 전환 함수
     {
@@ -30,12 +32,7 @@ public abstract class GameEvent : MonoBehaviour
     }
     protected virtual void Update()
     {
-        if (!IsActive) return;
-        timer += Time.deltaTime;
-        float ratio = Mathf.Clamp01(1f - timer / duration);
-        OnTick(ratio);
-
-        if (timer >= duration) Fail();
+       
     }
     protected abstract void OnActivated(); // start 같은 함수
     protected abstract void OnTick(float ratio); // 매 프레임 실행하는 함수

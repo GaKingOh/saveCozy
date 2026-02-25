@@ -15,8 +15,8 @@ public class ladderMoveController : MonoBehaviour
     }
     private void Update()
     {
-        if (ladder.GetComponent<ladderController>().playerBeside() && Input.GetKeyDown(KeyCode.UpArrow) && !ladder.GetComponent<ladderController>().upEnd) loadLadder = true;
-        if(ladder.GetComponent<ladderController>().playerBeside() && Input.GetKeyDown(KeyCode.DownArrow)) loadLadder = true;
+        if(ladder.GetComponent<ladderController>().playerBeside() && Input.GetKeyDown(KeyCode.UpArrow) && !ladder.GetComponent<ladderController>().upEnd) loadLadder = true;
+        if(ladder.GetComponent<ladderController>().playerBeside() && Input.GetKeyDown(KeyCode.DownArrow) && ladder.GetComponent<ladderController>().upEnd) loadLadder = true;
         if(loadLadder)
         {
             player.transform.position = new Vector3(ladder.transform.position.x-0.1f, player.transform.position.y,player.transform.position.z);
