@@ -44,7 +44,6 @@ public class timerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(cooltime);
         if (!running) return;
         timeCheck += Time.deltaTime;
 

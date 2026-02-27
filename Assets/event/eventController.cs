@@ -8,7 +8,7 @@ public class eventController : MonoBehaviour
 
     float Eventinterveral = 10f;
     float timecheck = 0;
-    window windowEvent;
+    windowEvent windowEvent;
     private void Start()
     {
         
@@ -20,12 +20,15 @@ public class eventController : MonoBehaviour
         if(timecheck - Eventinterveral >0)
         {
             timecheck = 0;
-
-            int idx = 1;
-            if (idx == 0) fireplace.GetComponent<FireplaceEvent>().Activate();
-            else if(idx==1) window.GetComponent<window>().Activate();
+            if (Eventinterveral > 5) Eventinterveral -= 0.5f;
+            int eventIdx = Random.Range(0, 3);
+            Debug.Log("event idx : " + eventIdx);
+            if (eventIdx == 0) fireplace.GetComponent<FireplaceEvent>().Activate();
+            else if(eventIdx==1) window.GetComponent<windowEvent>().Activate();
+            else if(eventIdx==2) clock.GetComponent<ClockEvent>().Activate();
         }
      //   windowEvent.Activate();
     }
+
 
 }

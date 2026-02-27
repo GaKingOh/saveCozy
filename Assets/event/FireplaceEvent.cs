@@ -33,7 +33,7 @@ public class FireplaceEvent : GameEvent
 
         timerBar.transform.GetChild(1).GetComponent<timerController>().setTime(duration);
         timerBar.SetActive(true);
-        timerBar.transform.GetChild(1).GetComponent<timerController>().init();
+        timerBar.transform.GetChild(1).GetComponent<timerController>().init();  
     }
 
     protected override void OnTick(float ratio)
@@ -79,7 +79,7 @@ public class FireplaceEvent : GameEvent
     }
 
     // 플레이어 상호작용으로 해결시키고 싶으면 이렇게 호출
-    public void AddWood()
+    public void AddWood() // 플레이어가 성공적으로 나무를 넣었을 때 
     {
         Resolve(); 
         timerBar.SetActive(false); 

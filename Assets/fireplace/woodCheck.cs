@@ -5,7 +5,7 @@ public class woodCheck : MonoBehaviour
     public GameObject woodManager;
     public CapsuleCollider2D playerCol;
     // Update is called once per frame
-    bool player = false;
+    bool player = false; // 플레이어가 옆에 있는지 확인하는 변수
     void Update()
     {
         if (!playerCol.IsTouching(gameObject.GetComponent<BoxCollider2D>())) return;
@@ -27,6 +27,13 @@ public class woodCheck : MonoBehaviour
         if(collision.tag=="Player")
         {
             player = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag=="Player")
+        {
+            player = false;
         }
     }
 }

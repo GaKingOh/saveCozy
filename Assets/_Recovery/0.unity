@@ -629,12 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::eventController
   fireplace: {fileID: 1566483954}
   window: {fileID: 957826349}
-  clock: {fileID: 1750877958}
---- !u!1 &320414399 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2620999437853023742, guid: 4e920ca3db6a6424ba79a345c16cb52b, type: 3}
-  m_PrefabInstance: {fileID: 1465739614}
-  m_PrefabAsset: {fileID: 0}
+  clock: {fileID: 0}
 --- !u!1 &328725104
 GameObject:
   m_ObjectHideFlags: 0
@@ -3562,55 +3557,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.1, y: 0.5}
   m_Size: {x: 0.35837436, y: 0.7651806}
   m_Direction: 0
---- !u!1 &1750877958
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1750877959}
-  - component: {fileID: 1750877960}
-  m_Layer: 0
-  m_Name: clockEvent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1750877959
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750877958}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1853254829}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1750877960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750877958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a06cddfc2e4ee84e80b336bfd9820cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClockEvent
-  duration: 10
-  minTimeLimit: 10
-  maxTimeLimit: 20
-  clockHand: {fileID: 774482340}
-  timerBar: {fileID: 320414399}
 --- !u!1 &1758444113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3935,8 +3881,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1819321375}
   - component: {fileID: 1819321374}
-  - component: {fileID: 1819321376}
-  - component: {fileID: 1819321377}
   m_Layer: 0
   m_Name: clock
   m_TagString: Untagged
@@ -4020,66 +3964,6 @@ Transform:
   - {fileID: 1843414069}
   m_Father: {fileID: 1801829151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1819321376
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819321373}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.0045783743, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.675, y: 1.075}
-    newSize: {x: 0.54, y: 0.86}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.47354633, y: 1.075}
-  m_EdgeRadius: 0
---- !u!114 &1819321377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819321373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf9fb6d1796aa54397597371bdc39a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::clockCheck
-  playerCol: {fileID: 1684542514}
-  clockEvent: {fileID: 1750877958}
 --- !u!1 &1841215228
 GameObject:
   m_ObjectHideFlags: 0
@@ -4276,7 +4160,6 @@ Transform:
   - {fileID: 191030720}
   - {fileID: 1566483955}
   - {fileID: 957826350}
-  - {fileID: 1750877959}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1859616963 stripped
@@ -4461,8 +4344,6 @@ GameObject:
   - component: {fileID: 2095598545}
   - component: {fileID: 2095598544}
   - component: {fileID: 2095598543}
-  - component: {fileID: 2095598546}
-  - component: {fileID: 2095598547}
   m_Layer: 0
   m_Name: window
   m_TagString: Untagged
@@ -4570,66 +4451,6 @@ Transform:
   - {fileID: 1564191671}
   m_Father: {fileID: 1801829151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2095598546
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095598542}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.16482627, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6266667, y: 1.2}
-    newSize: {x: 1.22, y: 0.9}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.297014, y: 1.2}
-  m_EdgeRadius: 0
---- !u!114 &2095598547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095598542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac04aa1fc8d5b704399f456fba206567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::windowCheck
-  playerCol: {fileID: 1684542514}
-  windowEvent: {fileID: 957826349}
 --- !u!1 &2102977112
 GameObject:
   m_ObjectHideFlags: 0

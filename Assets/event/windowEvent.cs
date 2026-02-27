@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class window : GameEvent
+public class windowEvent : GameEvent
 {
     public GameObject skull;
     public float minTimeLimit = 15f;
@@ -13,7 +13,8 @@ public class window : GameEvent
     {
         if (skull.activeSelf) return;
         else skull.SetActive(true);
-        
+        Debug.Log("Çß´Ù!!");
+        moveStop = false;
         duration = Random.Range(minTimeLimit, maxTimeLimit);
         startPos = skull.transform.position;
         targetPos = startPos + new Vector3(0f, 0.5f, 0f);
@@ -37,7 +38,10 @@ public class window : GameEvent
     }
     protected override void OnResolved()
     {
-    //    throw new System.NotImplementedException();
+        skull.transform.position = startPos;
+        skull.SetActive(false);
+        moveStop = true;
+        timerBar.SetActive(false);
     }
 
     protected override void OnFailed()
